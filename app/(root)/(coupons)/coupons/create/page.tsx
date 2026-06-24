@@ -1,3 +1,5 @@
+"use client";
+
 import PageHeading from "@/components/layout/page-heading";
 import CreateCouponForm from "../(components)/create-coupon-form";
 

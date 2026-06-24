@@ -1,3 +1,5 @@
+"use client";
+
 import PageHeading from "@/components/layout/page-heading";
 import EnrollmentTable from "@/app/(root)/(enrollments)/enrollments/(components)/enrollment-table";
 

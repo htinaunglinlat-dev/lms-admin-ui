@@ -1,3 +1,5 @@
+"use client";
+
 import PageHeading from "@/components/layout/page-heading";
 import CreateEnrollmentForm from "../(components)/create-enrollment-form";
 

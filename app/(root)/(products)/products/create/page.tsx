@@ -1,3 +1,5 @@
+"use client";
+
 import PageHeading from "@/components/layout/page-heading";
 import CreateProductForm from "../(components)/create-product-form";
 

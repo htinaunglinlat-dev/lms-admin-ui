@@ -1,3 +1,5 @@
+"use client";
+
 import PageHeading from "@/components/layout/page-heading";
 import CreateCourseForm from "../(components)/create-course-form";
 
