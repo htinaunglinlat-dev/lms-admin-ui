@@ -1,5 +1,6 @@
 import { config } from "@/config/config";
 import { useAuthStore } from "@/store/useAuthStore";
+import { BaseResponse } from "@/types/responseModel";
 import axios, { AxiosError, InternalAxiosRequestConfig } from "axios";
 
 const axiosInstance = axios.create({

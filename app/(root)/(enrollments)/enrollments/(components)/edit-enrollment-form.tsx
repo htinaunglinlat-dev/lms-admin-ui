@@ -7,19 +7,21 @@ import { Button } from "@/components/ui/button";
 import { DialogFooter } from "@/components/ui/dialog";
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
+import { useRouter } from "next/navigation";
 import { useUpdateEnrollment } from "@/hooks/use-enrollment";
 import { extractErrorMessage } from "@/lib/error";
 import { EnrollmentType } from "@/types/enrollment";
 
 type EditEnrollmentFormProps = {
   enrollment: EnrollmentType;
-  setOpen: (open: boolean) => void;
+  setOpen?: (open: boolean) => void;
 };
 
 export default function EditEnrollmentForm({
   enrollment,
   setOpen,
 }: EditEnrollmentFormProps) {
+  const router = useRouter();
   const [isActive, setIsActive] = useState(enrollment.is_active);
   const updateEnrollment = useUpdateEnrollment();
 
@@ -29,7 +31,11 @@ export default function EditEnrollmentForm({
       {
         onSuccess: () => {
           toast.success("Enrollment updated successfully");
-          setOpen(false);
+          if (setOpen) {
+            setOpen(false);
+          } else {
+            router.push("/enrollments");
+          }
         },
         onError: (error: unknown) => {
           const errorMessage = extractErrorMessage(error);
@@ -57,7 +63,9 @@ export default function EditEnrollmentForm({
       <DialogFooter>
         <Button
           variant="outline"
-          onClick={() => setOpen(false)}
+          onClick={() =>
+            setOpen ? setOpen(false) : router.push("/enrollments")
+          }
           disabled={updateEnrollment.isPending}
         >
           Cancel

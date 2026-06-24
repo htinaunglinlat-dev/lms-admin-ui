@@ -15,11 +15,7 @@ import { useParams } from "next/navigation";
 export default function EditEnrollmentPage() {
   const params = useParams<{ id: string }>();
   const enrollmentId = Number(params.id);
-  const {
-    data: response,
-    isPending,
-    isError,
-  } = useEnrollment(enrollmentId);
+  const { data: response, isPending, isError } = useEnrollment(enrollmentId);
   const enrollment = response?.data;
 
   const renderContent = () => {
@@ -57,17 +53,13 @@ export default function EditEnrollmentPage() {
         <Card className="w-full max-w-2xl">
           <CardHeader>
             <CardTitle>Enrollment Not Found</CardTitle>
-            <CardDescription>
-              Unable to load this enrollment.
-            </CardDescription>
+            <CardDescription>Unable to load this enrollment.</CardDescription>
           </CardHeader>
         </Card>
       );
     }
 
-    return (
-      <EditEnrollmentForm enrollmentId={enrollmentId} enrollment={enrollment} />
-    );
+    return <EditEnrollmentForm enrollment={enrollment} />;
   };
 
   return (

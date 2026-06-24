@@ -1,3 +1,4 @@
+import { AdminUserType } from "@/types/admin";
 import { create } from "zustand";
 
 interface AuthState {
@@ -21,6 +22,5 @@ export const useAuthStore = create<AuthState>((set) => ({
       accessToken,
       isAuthenticated: true,
     })),
-  logout: () =>
-    set({ user: null, accessToken: null, isAuthenticated: false }),
+  logout: () => set({ user: null, accessToken: null, isAuthenticated: false }),
 }));
