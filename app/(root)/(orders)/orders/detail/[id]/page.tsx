@@ -1,3 +1,4 @@
+"use client";
 
 import PageHeading from "@/components/layout/page-heading";
 import {
@@ -75,10 +76,7 @@ export default function OrderDetailPage() {
         </div>
 
         <div className="grid gap-6 lg:grid-cols-2">
-          <ProofImagesCard
-            orderId={order.id}
-            proofImages={order.proofImages}
-          />
+          <ProofImagesCard orderId={order.id} proofImages={order.proofImages} />
           <OrderHistoryCard histories={order.orderConfirmHistories} />
         </div>
 
