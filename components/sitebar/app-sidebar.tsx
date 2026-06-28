@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  Users,
   Settings,
   TreePalm,
   LayoutDashboard,
@@ -14,6 +13,8 @@ import {
   ReceiptText,
   GraduationCap,
   FileSignature,
+  Tag,
+  Newspaper,
 } from "lucide-react";
 
 import {
@@ -57,9 +58,19 @@ const items = [
     icon: BookOpen, // Represents open course material and learning
   },
   {
+    title: "Blogs",
+    url: "/blogs",
+    icon: Newspaper,
+  },
+  {
     title: "Categories",
     url: "/categories", // Fixed the typo in the original URL string ("/catgories")
     icon: FolderKanban, // Represents structured grouping, sorting, or organization
+  },
+  {
+    title: "Tags",
+    url: "/tags",
+    icon: Tag,
   },
   {
     title: "Products",
@@ -80,11 +91,6 @@ const items = [
     title: "Coupons",
     url: "/coupons",
     icon: TicketPercent, // Represents open course material and learning
-  },
-  {
-    title: "Setting",
-    url: "/setting",
-    icon: Settings, // Kept for configuration and system preferences
   },
 ];
 

@@ -36,7 +36,9 @@ export function ImageUpload({
     setUploading(true);
     try {
       const response = await uploadImage(file, endpoint, fieldName);
-      const imageUrl = response.data.url;
+      console.log("response.data", response.data);
+      const imageUrl = response.data[0].url;
+      console.log("imageUrl", imageUrl);
       onChange(imageUrl);
       toast.success("Image uploaded successfully");
     } catch {
@@ -59,8 +61,8 @@ export function ImageUpload({
   const hasImage = !!value;
 
   return (
-    <div className="space-y-3">
-      <div className="relative flex aspect-square w-full max-w-50 items-center justify-center overflow-hidden rounded-lg border-2 border-dashed border-muted-foreground/30 bg-muted/20">
+    <div className="space-y-3 max-w-xs">
+      <div className="relative flex h-40 w-full items-center justify-center overflow-hidden rounded-lg border-2 border-dashed border-muted-foreground/30 bg-muted/20">
         {uploading ? (
           <div className="flex flex-col items-center gap-2 text-muted-foreground">
             <Loader2 className="size-8 animate-spin" />

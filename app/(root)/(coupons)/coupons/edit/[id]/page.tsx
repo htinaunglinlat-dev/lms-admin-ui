@@ -1,4 +1,3 @@
-"use client";
 
 import EditCouponForm from "@/app/(root)/(coupons)/coupons/(components)/edit-coupon-form";
 import PageHeading from "@/components/layout/page-heading";

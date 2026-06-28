@@ -9,6 +9,7 @@ import { CourseType } from "@/types/course";
 import { ColumnDef } from "@tanstack/react-table";
 import { Edit, ListPlus } from "lucide-react";
 import Link from "next/link";
+import { CourseActionMenu } from "./course-action-menu";
 
 export const columns: ColumnDef<CourseType>[] = [
   {
@@ -64,29 +65,6 @@ export const columns: ColumnDef<CourseType>[] = [
   {
     accessorKey: "actions",
     header: "",
-    cell: ({ row }) => (
-      <div className="flex items-center gap-2">
-        <Button
-          asChild
-          variant="outline"
-          className="text-emerald-600 rounded-full size-10 hover:bg-emerald-600 hover:text-white transition cursor-pointer"
-          title="Manage list items"
-        >
-          <Link href={`/courses/manage/${row.original.id}`}>
-            <ListPlus />
-          </Link>
-        </Button>
-        <Button
-          asChild
-          variant="outline"
-          className="text-blue-500 rounded-full size-10 hover:bg-blue-500 hover:text-white transition cursor-pointer"
-          title="Edit course"
-        >
-          <Link href={`/courses/edit/${row.original.id}`}>
-            <Edit />
-          </Link>
-        </Button>
-      </div>
-    ),
+    cell: ({ row }) => <CourseActionMenu id={row.original.id} />,
   },
 ];

@@ -1,4 +1,3 @@
-"use client";
 
 import PageHeading from "@/components/layout/page-heading";
 import CouponTable from "./(components)/coupon-table";

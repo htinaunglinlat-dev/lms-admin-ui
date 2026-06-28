@@ -19,7 +19,7 @@ function ActionMenu({ currentRoleId }: Props) {
 
   const onEdit = () => {
     if (!currentRoleId) return;
-    router.push(`/admins/edit/${currentRoleId}`);
+    router.push(`/admins/${currentRoleId}/edit`);
   };
 
   const onDelete = () => {

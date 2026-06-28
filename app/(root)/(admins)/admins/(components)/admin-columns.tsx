@@ -1,11 +1,12 @@
 "use client";
 
 import { StatusBadge } from "@/components/custom/badge/status-badge";
-import ActionMenu from "@/components/custom/table-action-menu/action-menu";
+
 import { SortableColumnHeader } from "@/components/custom/table/sortable-column-header";
 import { formatReadableDate } from "@/lib/date";
 import { AdminUserType } from "@/types/admin";
 import { ColumnDef } from "@tanstack/react-table";
+import { AdminActionMenu } from "./admin-action-menu";
 
 export const columns: ColumnDef<AdminUserType>[] = [
   {
@@ -56,8 +57,7 @@ export const columns: ColumnDef<AdminUserType>[] = [
     accessorKey: "actions",
     header: "",
     cell: ({ row }) => {
-      const id = row.original.id;
-      return <ActionMenu currentRoleId={id} />;
+      return <AdminActionMenu id={row.original.id} />;
     },
   },
 ];

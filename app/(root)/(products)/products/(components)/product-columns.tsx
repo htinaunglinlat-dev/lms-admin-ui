@@ -9,6 +9,7 @@ import { ColumnDef } from "@tanstack/react-table";
 import { Edit } from "lucide-react";
 import Link from "next/link";
 import { formatCurrency } from "@/lib/currency";
+import { ProductActionMenu } from "./product-action-menu";
 
 export const columns: ColumnDef<ProductType>[] = [
   {
@@ -63,17 +64,6 @@ export const columns: ColumnDef<ProductType>[] = [
   {
     accessorKey: "actions",
     header: "",
-    cell: ({ row }) => (
-      <Button
-        asChild
-        variant="outline"
-        className="text-blue-500 rounded-full size-10 hover:bg-blue-500 hover:text-white transition cursor-pointer"
-        title="Edit product"
-      >
-        <Link href={`/products/edit/${row.original.id}`}>
-          <Edit />
-        </Link>
-      </Button>
-    ),
+    cell: ({ row }) => <ProductActionMenu id={row.original.id} />,
   },
 ];

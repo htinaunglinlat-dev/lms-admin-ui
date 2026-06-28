@@ -15,7 +15,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Field, FieldError, FieldGroup, FieldLabel } from "@/components/ui/field";
+import {
+  Field,
+  FieldError,
+  FieldGroup,
+  FieldLabel,
+} from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import {
   NativeSelect,
@@ -50,7 +55,7 @@ export default function EditProductForm({
       price: product.price,
       currency: product.currency as "MMK" | "USD",
       is_active: product.is_active,
-      course_ids: product.courses?.map((c) => c.id) ?? [],
+      course_id: product.courses?.[0]?.id ?? 0,
     }),
     [
       product.name,
@@ -110,9 +115,7 @@ export default function EditProductForm({
               control={control}
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
-                  <FieldLabel htmlFor="edit-product-form-name">
-                    Name
-                  </FieldLabel>
+                  <FieldLabel htmlFor="edit-product-form-name">Name</FieldLabel>
                   <Input
                     {...field}
                     id="edit-product-form-name"
@@ -184,12 +187,8 @@ export default function EditProductForm({
                     aria-invalid={fieldState.invalid}
                     className="w-full"
                   >
-                    <NativeSelectOption value="MMK">
-                      MMK
-                    </NativeSelectOption>
-                    <NativeSelectOption value="USD">
-                      USD
-                    </NativeSelectOption>
+                    <NativeSelectOption value="MMK">MMK</NativeSelectOption>
+                    <NativeSelectOption value="USD">USD</NativeSelectOption>
                   </NativeSelect>
                   {fieldState.invalid && (
                     <AppFieldError errors={[fieldState.error]} />
@@ -199,13 +198,13 @@ export default function EditProductForm({
             />
 
             <Controller
-              name="course_ids"
+              name="course_id"
               control={control}
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
-                  <FieldLabel>Courses</FieldLabel>
+                  <FieldLabel>Course</FieldLabel>
                   <CourseSelect
-                    value={field.value ?? []}
+                    value={field.value}
                     onChange={field.onChange}
                   />
                   {fieldState.invalid && (
@@ -234,10 +233,10 @@ export default function EditProductForm({
                     aria-invalid={fieldState.invalid}
                     className="w-full"
                   >
-                    <NativeSelectOption value="true">
-                      Active
+                    <NativeSelectOption value="true">Active</NativeSelectOption>
+                    <NativeSelectOption value="false">
+                      Inactive
                     </NativeSelectOption>
-                    <NativeSelectOption value="false">Inactive</NativeSelectOption>
                   </NativeSelect>
                   {fieldState.invalid && (
                     <FieldError errors={[fieldState.error]} />

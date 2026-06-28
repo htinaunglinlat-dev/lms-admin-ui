@@ -17,7 +17,7 @@ type RetryConfig = InternalAxiosRequestConfig & {
   _retry?: boolean;
 };
 
-axiosInstance.interceptors.request.use((requestConfig) => {
+axiosInstance.interceptors.request.use(async (requestConfig) => {
   const accessToken = useAuthStore.getState().accessToken;
 
   if (accessToken) {

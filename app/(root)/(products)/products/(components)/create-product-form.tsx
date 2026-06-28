@@ -53,7 +53,7 @@ export default function CreateProductForm() {
       price: 0,
       currency: "MMK",
       is_active: true,
-      course_ids: [],
+      course_id: 0,
     },
   });
 
@@ -176,13 +176,13 @@ export default function CreateProductForm() {
             />
 
             <Controller
-              name="course_ids"
+              name="course_id"
               control={control}
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
-                  <FieldLabel>Courses</FieldLabel>
+                  <FieldLabel>Course</FieldLabel>
                   <CourseSelect
-                    value={field.value ?? []}
+                    value={field.value}
                     onChange={field.onChange}
                   />
                   {fieldState.invalid && (

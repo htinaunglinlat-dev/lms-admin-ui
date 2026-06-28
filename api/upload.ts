@@ -10,7 +10,7 @@ export const uploadImage = async (
   file: File,
   endpoint: UploadEndpointEnum,
   fieldName: ImageFieldNameEnum,
-): Promise<BaseResponse<ImageUploadResponse>> => {
+): Promise<BaseResponse<ImageUploadResponse[]>> => {
   const formData = new FormData();
   formData.append(fieldName, file);
 

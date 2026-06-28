@@ -2,12 +2,10 @@
 
 import { StatusBadge } from "@/components/custom/badge/status-badge";
 import { SortableColumnHeader } from "@/components/custom/table/sortable-column-header";
-import { Button } from "@/components/ui/button";
 import { formatReadableDate } from "@/lib/date";
 import { StudentType } from "@/types/student";
 import { ColumnDef } from "@tanstack/react-table";
-import { Edit } from "lucide-react";
-import Link from "next/link";
+import { StudentActionMenu } from "./student-action-menu";
 
 export const columns: ColumnDef<StudentType>[] = [
   {
@@ -51,17 +49,6 @@ export const columns: ColumnDef<StudentType>[] = [
   {
     accessorKey: "actions",
     header: "",
-    cell: ({ row }) => (
-      <Button
-        asChild
-        variant="outline"
-        className="text-blue-500 rounded-full size-10 hover:bg-blue-500 hover:text-white transition cursor-pointer"
-        title="Edit student"
-      >
-        <Link href={`/students/edit/${row.original.id}`}>
-          <Edit />
-        </Link>
-      </Button>
-    ),
+    cell: ({ row }) => <StudentActionMenu id={row.original.id} />,
   },
 ];

@@ -10,3 +10,24 @@ export interface LessonType {
   created_at: string;
   updated_at: string;
 }
+
+export interface ReorderLessonType {
+  previous_lesson_id?: number;
+  next_lesson_id?: number;
+}
+
+export const lessonSortableFields = [
+  "id",
+  "title",
+  "duration",
+  "sort_order",
+  "created_at",
+  "updated_at",
+] as const;
+
+export type LessonSortableField = (typeof lessonSortableFields)[number];
+
+export interface LessonQueryType extends QueryType<LessonSortableField> {
+  paginate?: boolean;
+  section_id?: number;
+}

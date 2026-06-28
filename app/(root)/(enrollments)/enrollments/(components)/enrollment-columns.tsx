@@ -11,6 +11,7 @@ import { StatusBadge } from "@/components/custom/badge/status-badge";
 import { EnrollmentTypeBadge } from "@/components/custom/badge/enrollment-type-badge";
 import GenericFormDialog from "@/components/custom/elements/generic-form-dialog";
 import EditEnrollmentForm from "./edit-enrollment-form";
+import { EnrollmentActionMenu } from "./enrollment-action-menu";
 
 export const columns: ColumnDef<EnrollmentType>[] = [
   {
@@ -64,36 +65,6 @@ export const columns: ColumnDef<EnrollmentType>[] = [
   {
     accessorKey: "actions",
     header: "",
-    cell: ({ row }) => (
-      <div className="flex items-center gap-2">
-        <Button
-          asChild
-          variant="outline"
-          className="text-slate-600 rounded-full size-10 hover:bg-slate-600 hover:text-white transition cursor-pointer"
-          title="View enrollment"
-        >
-          <Link href={`/enrollments/detail/${row.original.id}`}>
-            <Eye />
-          </Link>
-        </Button>
-        <GenericFormDialog
-          trigger={
-            <Button
-              variant="outline"
-              className="text-blue-500 rounded-full size-10 hover:bg-blue-500 hover:text-white transition cursor-pointer"
-              title="Edit enrollment"
-            >
-              <Edit />
-            </Button>
-          }
-          title="Edit Enrollment"
-          description={`Update the status for enrollment #${row.original.id}.`}
-        >
-          {({ setOpen }) => (
-            <EditEnrollmentForm enrollment={row.original} setOpen={setOpen} />
-          )}
-        </GenericFormDialog>
-      </div>
-    ),
+    cell: ({ row }) => <EnrollmentActionMenu enrollment={row.original} />,
   },
 ];

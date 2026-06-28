@@ -1,35 +1,50 @@
 import axiosInstance from "@/api/axiosInstance";
 import { BaseResponse, PaginationReponse } from "@/types/responseModel";
-import { ProductQueryType, ProductType } from "@/types/product";
 import {
-  CreateProductFormValues,
-  EditProductFormValues,
-} from "@/validations/product.schema";
+  ReorderSectionType,
+  SectionQueryType,
+  SectionType,
+} from "@/types/section";
+import {
+  CreateSectionFormValues,
+  EditSectionFormValues,
+} from "@/validations/section.schema";
 
 export const fetchSections = async (
-  query?: ProductQueryType,
-): Promise<PaginationReponse<ProductType[]>> => {
+  query?: SectionQueryType,
+): Promise<PaginationReponse<SectionType[]>> => {
   const response = await axiosInstance.get("/admin/sections", {
-    params: { ...query },
+    params: { paginate: false, ...query },
   });
   return response.data;
 };
 
-export const fetchProductById = async (
+export const reorderSection = async (
   id: number,
-): Promise<BaseResponse<ProductType>> => {
+  reorderSectionList: ReorderSectionType,
+): Promise<BaseResponse<SectionType[]>> => {
+  const response = await axiosInstance.patch(
+    `/admin/sections/${id}/reorder`,
+    reorderSectionList,
+  );
+  return response.data;
+};
+
+export const fetchSectionById = async (
+  id: number,
+): Promise<BaseResponse<SectionType>> => {
   const response = await axiosInstance.get(`/admin/sections/${id}`);
   return response.data;
 };
 
-export const createProduct = async (data: CreateProductFormValues) => {
+export const createSection = async (data: CreateSectionFormValues) => {
   const response = await axiosInstance.post("/admin/sections", data);
   return response.data;
 };
 
-export const updateProduct = async (
+export const updateSection = async (
   id: number,
-  data: EditProductFormValues,
+  data: EditSectionFormValues,
 ) => {
   const response = await axiosInstance.patch(`/admin/sections/${id}`, data);
   return response.data;

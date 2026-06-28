@@ -1,4 +1,3 @@
-"use client";
 
 import AdminTable from "./(components)/admin-table";
 import PageHeading from "@/components/layout/page-heading";

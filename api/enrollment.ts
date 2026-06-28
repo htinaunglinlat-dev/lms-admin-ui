@@ -31,6 +31,9 @@ export const updateEnrollment = async (
   id: number,
   data: EditEnrollmentFormValues,
 ) => {
-  const response = await axiosInstance.patch(`/admin/enrollments/${id}`, data);
+  const response = await axiosInstance.patch(
+    `/admin/enrollments/${id}/status`,
+    data,
+  );
   return response.data;
 };
