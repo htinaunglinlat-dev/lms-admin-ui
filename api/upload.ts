@@ -1,5 +1,5 @@
-import axiosInstance from "@/api/axiosInstance";
-import { BaseResponse } from "@/types/responseModel";
+import axiosInstance from "@/api/axios-instance";
+import { BaseResponse } from "@/types/response-model";
 import {
   ImageFieldNameEnum,
   ImageUploadResponse,

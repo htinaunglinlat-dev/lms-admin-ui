@@ -1,6 +1,6 @@
 import { AdminUserType } from "./admin";
 import { CategoryType } from "./category";
-import { QueryType } from "./queryType";
+import { QueryType } from "./query-type";
 
 export interface CourseType {
   id: number;

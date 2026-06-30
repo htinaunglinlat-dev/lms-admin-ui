@@ -1,5 +1,5 @@
-import axiosInstance from "@/api/axiosInstance";
-import { BaseResponse, PaginationReponse } from "@/types/responseModel";
+import axiosInstance from "@/api/axios-instance";
+import { BaseResponse, PaginationReponse } from "@/types/response-model";
 import { OrderQueryType, OrderType } from "@/types/order";
 import { EditOrderFormValues } from "@/validations/order.schema";
 

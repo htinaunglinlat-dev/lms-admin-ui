@@ -2,9 +2,9 @@ import {
   CreateAdminFormValues,
   EditAdminFormValues,
 } from "@/validations/admin.schema";
-import axiosInstance from "@/api/axiosInstance";
+import axiosInstance from "@/api/axios-instance";
 import { AdminQueryType, AdminUserType } from "@/types/admin";
-import { BaseResponse, PaginationReponse } from "@/types/responseModel";
+import { BaseResponse, PaginationReponse } from "@/types/response-model";
 
 export const fetchAdmins = async (
   query?: AdminQueryType,

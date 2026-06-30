@@ -2,7 +2,7 @@ import { AdminUserType } from "./admin";
 import { CouponType } from "./coupon";
 import { PaymentType } from "./payment";
 import { CurrencyEnum, ProductType } from "./product";
-import { QueryType } from "./queryType";
+import { QueryType } from "./query-type";
 import { StudentType } from "./student";
 
 export interface ProofImage {

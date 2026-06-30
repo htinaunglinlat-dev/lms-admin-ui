@@ -1,6 +1,6 @@
-import axiosInstance from "@/api/axiosInstance";
+import axiosInstance from "@/api/axios-instance";
 import { AdminUserType } from "@/types/admin";
-import { BaseResponse } from "@/types/responseModel";
+import { BaseResponse } from "@/types/response-model";
 import { LoginFormValues } from "@/validations/auth.schema";
 
 export const login = async (

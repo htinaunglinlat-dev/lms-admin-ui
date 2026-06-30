@@ -1,5 +1,5 @@
-import axiosInstance from "@/api/axiosInstance";
-import { BaseResponse, PaginationReponse } from "@/types/responseModel";
+import axiosInstance from "@/api/axios-instance";
+import { BaseResponse, PaginationReponse } from "@/types/response-model";
 import { CategoryQueryType, CategoryType } from "@/types/category";
 import { CategoryFormValues } from "@/validations/category.schema";
 

@@ -1,5 +1,5 @@
-import axiosInstance from "@/api/axiosInstance";
-import { BaseResponse, PaginationReponse } from "@/types/responseModel";
+import axiosInstance from "@/api/axios-instance";
+import { BaseResponse, PaginationReponse } from "@/types/response-model";
 import { LessonQueryType, LessonType, ReorderLessonType } from "@/types/lesson";
 import {
   CreateLessonFormValues,

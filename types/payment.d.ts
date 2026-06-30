@@ -1,5 +1,5 @@
 import { AdminUserType } from "./admin";
-import { QueryType } from "./queryType";
+import { QueryType } from "./query-type";
 
 export interface PaymentType {
   id: number;

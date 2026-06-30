@@ -1,7 +1,7 @@
 import { AdminUserType } from "./admin";
 import { CourseType } from "./course";
 import { OrderType } from "./order";
-import { QueryType } from "./queryType";
+import { QueryType } from "./query-type";
 import { StudentType } from "./student";
 
 export interface EnrollmentType {

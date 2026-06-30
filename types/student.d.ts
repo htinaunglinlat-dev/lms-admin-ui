@@ -1,4 +1,4 @@
-import { QueryType } from "./queryType";
+import { QueryType } from "./query-type";
 
 export interface StudentType {
   id: number;

@@ -1,6 +1,6 @@
 import { AdminUserType } from "./admin";
 import { CourseType } from "./course";
-import { QueryType } from "./queryType";
+import { QueryType } from "./query-type";
 import { TagType } from "./tag";
 
 export interface BlogType {

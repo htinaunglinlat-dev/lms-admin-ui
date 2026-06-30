@@ -1,5 +1,5 @@
 import { CourseType } from "./course";
-import { QueryType } from "./queryType";
+import { QueryType } from "./query-type";
 
 export interface ProductType {
   id: number;

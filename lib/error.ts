@@ -1,5 +1,5 @@
 import { AxiosError } from "axios";
-import { ErrorResponse } from "@/types/responseModel";
+import { ErrorResponse } from "@/types/response-model";
 
 export function extractErrorMessage(error: unknown): string {
   if (error instanceof AxiosError) {

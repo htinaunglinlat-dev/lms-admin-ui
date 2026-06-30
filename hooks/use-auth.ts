@@ -6,7 +6,7 @@ import {
   getMe,
   refreshAccessToken,
 } from "@/api/auth";
-import { useAuthStore } from "@/store/useAuthStore";
+import { useAuthStore } from "@/store/use-auth-store";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import type { LoginFormValues } from "@/validations/auth.schema";
 

@@ -1,4 +1,4 @@
-import { QueryType } from "./queryType";
+import { QueryType } from "./query-type";
 
 export interface AdminUserType {
   id: number;
@@ -12,7 +12,7 @@ export interface AdminUserType {
 export type AdminRoleEnum = "SUPER_ADMIN" | "ADMIN";
 
 // Admin Query Type
-declare interface AdminQueryType extends QueryType<AdminSortableField> {}
+export interface AdminQueryType extends QueryType<AdminSortableField> {}
 
 export const adminSortableFields = [
   "id",
